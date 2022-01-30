@@ -9,5 +9,4 @@ import store from './store'
 const myApp = createApp(App)
 myApp.use(VueAxios, axios) 
 myApp.use(router)
-myApp.use(store)
 myApp.mount('#app')
