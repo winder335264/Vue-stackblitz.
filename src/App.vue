@@ -17,13 +17,15 @@ export default {
     Formulario
   },
    setup() {
-    const mensaje = "Hola Winder Bienvenido a Vue.js 3 (Formularios)";
+    const mensaje = "Vue.js 3 (Formularios)";
     const form = {
-      nombre: 'Winder Morillo',
-      email:'winder335264@gmail.com'
+      nombre: { label: 'Nombre', input: 'winder Morilo'},
+      email: { label: 'Email', input: 'winder335264@gmail.com'},
     }
+
+    const guardarDatos = () => { console.log("Guardamos los datos -> ", form)}
     return {
-      mensaje,form
+      mensaje,form,guardarDatos
     }
   }
 }
