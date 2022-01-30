@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: "/",
       component: Form,
-    }
+    } 
   ],
 });
 export default router;
