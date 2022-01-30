@@ -3,12 +3,19 @@
     <!--<img alt="Vue logo" src="https://vuejs.org/images/logo.png">-->
     <HelloWorld :msg="mensaje"/>
     <Formulario :form="form" @guardarInfo="guardarDatos"/>
+
+    <HelloWorld :msg="mensaje1"/>
+
+    <button @click="ObtenerUsuarios">Obtener Usuarios</button> <br><br>
+    <button @click="ObtenerUnPost">Obtener un Post</button> <br><br>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Formulario from './components/formulario.vue'
+import axios from 'axios'
+import API from './services/index.js'
 
 export default {
   name: 'App',
@@ -18,14 +25,31 @@ export default {
   },
    setup() {
     const mensaje = "Vue.js 3 (Formularios)";
+    const mensaje1 = "Vue.js 3 (Consummo api)";
     const form = {
       nombre: { label: 'Nombre', input: 'winder Morilo'},
       email: { label: 'Email', input: 'winder335264@gmail.com'},
     }
 
-    const guardarDatos = () => { console.log("Guardamos los datos -> ", form)}
+    //Metodos
+    const guardarDatos = () => { 
+      console.log("Guardamos los datos -> ", form)
+    }
+
+    //Consumiendo una API
+    const ObtenerUsuarios = async() => { 
+      let Usuarios = await API.ObtenerUsuarios();
+      console.log(Usuarios);
+        
+    }
+    const ObtenerUnPost =  async() => { 
+      let Post = await API.ObtenerUnPost();
+      console.log(Post);
+        
+    }
+    
     return {
-      mensaje,form,guardarDatos
+      mensaje,mensaje1,form,guardarDatos,ObtenerUsuarios,ObtenerUnPost
     }
   }
 }
