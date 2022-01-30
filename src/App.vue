@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="https://vuejs.org/images/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :msg="mensaje"/>
   </div>
 </template>
 
@@ -11,7 +11,13 @@ import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+  },
+   setup() {
+    const mensaje = "Hola Winder Bienvenido a Vue.js 3";
+    return {
+      mensaje,
+    }
   }
 }
 </script>
