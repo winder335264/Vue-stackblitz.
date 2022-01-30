@@ -25,7 +25,7 @@ export default {
   },
    setup() {
     const mensaje = "Vue.js 3 (Formularios)";
-    const mensaje1 = "Vue.js 3 (Consummo api)";
+    const mensaje1 = "Vue.js 3 (Consumo api)";
     const form = {
       nombre: { label: 'Nombre', input: 'winder Morilo'},
       email: { label: 'Email', input: 'winder335264@gmail.com'},
@@ -38,13 +38,11 @@ export default {
 
     //Consumiendo una API
     const ObtenerUsuarios = async() => { 
-      let Usuarios = await API.ObtenerUsuarios();
-      console.log(Usuarios);
+      console.log(await API.ObtenerUsuarios());
         
     }
     const ObtenerUnPost =  async() => { 
-      let Post = await API.ObtenerUnPost();
-      console.log(Post);
+      console.log( await API.ObtenerUnPost());
         
     }
     

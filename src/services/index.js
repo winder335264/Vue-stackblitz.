@@ -7,7 +7,7 @@ export default {
     return mapResponse(axios.get('https://jsonplaceholder.typicode.com/users'));
   },
   ObtenerUnPost: () => { 
-    return mapResponse(axios.post('https://jsonplaceholder.typicode.com/posts/1'));
+    return mapResponse(axios.post('https://jsonplaceholder.typicode.com/posts'));
   },
 
 
